@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--Menu y menu movil-->
+    <nav class="nav">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <a href="#" class="logo" data-aos="fade-right" data-aos-duration="2000"></a>
+
+        <ul class="nav-links" data-aos="fade-up" data-aos-duration="3000">
+            <i class="uil uil-times navCloseBtn"></i>
+            <li>
+                <a href="#" class="menu-nav">
+                    <i class="fi fi-rr-home"></i>
+                    <span class="txt-menu"> Inicio </span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-nav">
+                    <span class="txt-menu">Objetos Encontrados</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-nav">
+                    <i class="fi fi-rs-clothes-hanger"></i>
+                    <span class="txt-menu">Reportes</span>
+                </a>
+            <li>
+                <a href="#" class="menu-nav">
+                    <i class="fi fi-rr-star"></i>
+                    <span class="txt-menu">Objetos Encontrados</span>
+                </a>
+            </li>
+            </li>
+            <li>
+                <a href="#" class="menu-nav">
+                    <i class="fi fi-rr-envelope"></i>
+                    <span class="txt-menu">Contacto</span>
+                </a>
+            </li>
+        </ul>
+
+        <i class="uil uil-search search-icon" id="searchIcon"></i>
+
+        <form class="search-box" method="POST" action="">
+            <i class="uil uil-search search-icon"></i>
+            <input type="text" name="search" onkeyup="showSuggestions(this.value)" placeholder="Buscar productos...">
+            <div id="suggestions"></div>
+        </form>
+
+        <script src="scripts/Buscador.js" defer></script>
+    </nav>
+    <div class="container">
+        <h1>¿Has perdido algún objeto en la UPTx?</h1>
+        <p>No te preocupes en UPTx Finder puedes buscar objetos perdidos fácilmente y reportar algún objeto perdido</p>
+    </div>
+</body>
+
+</html>
