@@ -567,6 +567,29 @@ a {
     margin-top: 10px;
 }
 
+/* footer styles 
+footer {
+    background-color: #ce3e3e;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+} /*
+
 /* Responsive: tablets */
 @media screen and (max-width: 992px) {
     .container {
