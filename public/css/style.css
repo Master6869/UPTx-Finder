@@ -16,7 +16,7 @@ body {
     left: 0;
     width: 100%;
     padding: 10px 14px;
-    background: #222222;
+    background: #ce3e3e;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 12;
     font-family: "Poppins", sans-serif;
@@ -67,7 +67,7 @@ a {
 }
 
 .menu-nav:hover {
-    background-color: #CBE4DE;
+    background-color: #ffffff;
     color: #11101d;
 }
 
@@ -83,6 +83,16 @@ a {
     font-weight: 500;
     margin-top: 13px;
 }
+
+.logo img {
+    /*Contenid de diseño de imag*/
+    position: absolute;
+    margin-top: -59px;
+    width: 250px;
+    height: 150px;
+    transition: all 0.3s ease;
+}
+
 
 .nav .nav-links {
     column-gap: 20px;
@@ -274,7 +284,7 @@ a {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
-    padding-left: 230px;
+    padding-left: 250px;
     justify-items: center;
     align-items: center;
 }
@@ -282,13 +292,382 @@ a {
 .card {
     width: 300px;
     height: 400px;
-    background-color: #f9f9f9;
+    background-color: #ececec;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(27, 27, 27, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: 24px;
+    color: #333;
+    padding: 10px;
+    font-family: poppins, sans-serif;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+    padding: 0 20px 20px;
+    font-family: poppins, sans-serif;
+}
+
+/* container3 styles */
+.container3 {
+    margin-top: 100px;
+    padding-left: 200px;
+}
+
+.container3 h1 {
+    font-size: 50px;
+    color: #333;
+    font-family: poppins, sans-serif;
+    justify-items: center;
+    align-items: center;
+    padding-left: 250px;
+}
+
+.container3 p {
+    font-size: 20px;
+    color: #666;
+    font-family: poppins, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-txt {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 8px;
+}
+
+.Text2-cont3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.btn-cont3 {
+    /*Posicionamiento del botón*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    /*dieseño del botón*/
+    background-color: #ce3e3e;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+}
+
+.btn-cont3 a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: poppins, sans-serif;
+}
+
+.btn-cont3:hover {
+    background-color: #d42d2d;
+    transition: background-color 0.3s ease;
+}
+
+/* contenido de objetos perdidos */
+.container4 h1 {
+    font-size: 50px;
+    color: #333;
+    font-family: poppins, sans-serif;
+    justify-items: center;
+    align-items: center;
+    padding-left: 150px;
+}
+
+.container4 samp {
+    font-size: 20px;
+    padding-left: 150px;
+    color: #666;
+    font-family: poppins, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajuste de posición del ancla */
+.item {
+    position: relative;
+    top: -100px;
+    /* Ajusta este valor según la altura de tu barra de navegación */
+}
+
+/* Formulario de búsqueda */
+.container5 h1 {
+    margin-top: 100px;
+    font-size: 36px;
+    color: #333;
+    font-family: poppins, sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    grid-template-rows: repeat(4, auto);
+    gap: 5px;
+    padding: 20px;
+    background-color: #e4e3e3;
+    border-radius: 10px;
+    margin: 40px auto;
+    width: max-content;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.formulario input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.formulario input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #ce3e3e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #b32c2c;
+}
+
+.formulario input[type="file"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.formulario label {
+    font-size: 18px;
+    color: #333;
+    font-family: poppins, sans-serif;
+    margin-right: 10px;
+}
+
+.formulario textarea {
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.formulario select {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.from1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.from2 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.from3 {
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+.from4 {
+    grid-column-start: 1;
+    grid-row-start: 4;
+}
+
+.from5 {
+    grid-column-start: 1;
+    grid-row-start: 5;
+}
+
+.from5 button {
+    width: 300px;
+    padding: 10px;
+    background-color: #ce3e3e;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.from5 button:hover {
+    background-color: #b32c2c;
+    transition: background-color 0.3s ease;
+}
+
+.from6 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.from7 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    max-width: 400px;
+    max-height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.from7 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.from8 {
+    grid-column-start: 2;
+    grid-row-start: 4;
+}
+
+.from8 p {
+    font-size: 16px;
+    color: #333;
+    font-family: poppins, sans-serif;
+    margin-top: 10px;
+}
+
+/* Responsive: tablets */
+@media screen and (max-width: 992px) {
+    .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .container h1,
+    .container p,
+    .container2 h1,
+    .container3 h1 {
+        padding-left: 0;
+    }
+
+    .container-cards {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .container3 {
+        padding-left: 50px;
+    }
+
+    .container3 h1 {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .cont-txt {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+
+/* Responsive: phones */
+@media screen and (max-width: 576px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        margin-top: 100px;
+        padding: 10px;
+    }
+
+    .container h1 {
+        font-size: 42px;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .container p {
+        font-size: 20px;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .container2 {
+        margin-top: 100px;
+    }
+
+    .container2 h1 {
+        font-size: 30px;
+        text-align: center;
+        padding: 0;
+    }
+
+    .container-cards {
+        grid-template-columns: 1fr;
+        padding: 0;
+        /* Cambia de 10px a 0 para aprovechar todo el ancho */
+    }
+
+    .card {
+        width: 100%;
+        max-width: 98vw;
+        /* Haz que la tarjeta use casi todo el ancho de la pantalla */
+        min-width: 0;
+    }
+
+    .container3 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .container3 h1 {
+        font-size: 30px;
+        padding: 0;
+        text-align: center;
+    }
+
+    .container3 p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .cont-txt {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .Text2-cont3 {
+        padding: 10px;
+    }
 }

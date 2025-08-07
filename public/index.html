@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="css/style.css">
+    <!--  Link Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
     <!--Menu y menu movil-->
     <nav class="nav">
         <i class="uil uil-bars navOpenBtn"></i>
-        <a href="#" class="logo" data-aos="fade-right" data-aos-duration="2000"></a>
+        <a href="#" class="logo" data-aos="fade-right" data-aos-duration="2000">
+            <img src="imgs/Beige Blogger Moderna Personal Sitio web (1).png" alt="Logo UPTx Finder">
+        </a>
 
         <ul class="nav-links" data-aos="fade-up" data-aos-duration="3000">
             <i class="uil uil-times navCloseBtn"></i>
@@ -23,24 +27,24 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="menu-nav">
-                    <span class="txt-menu">Objetos Encontrados</span>
+                <a href="#ultimos" class="menu-nav">
+                    <span class="txt-menu">Objetos encontrado</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="menu-nav">
+                <a href="#perdiste" class="menu-nav">
                     <i class="fi fi-rs-clothes-hanger"></i>
                     <span class="txt-menu">Reportes</span>
                 </a>
             <li>
-                <a href="#" class="menu-nav">
-                    <i class="fi fi-rr-star"></i>
-                    <span class="txt-menu">Objetos Encontrados</span>
+                <a href="#lista" class="menu-nav">
+
+                    <span class="txt-menu">Objetos perdidos</span>
                 </a>
             </li>
             </li>
             <li>
-                <a href="#" class="menu-nav">
+                <a href="#contacto" class="menu-nav">
                     <i class="fi fi-rr-envelope"></i>
                     <span class="txt-menu">Contacto</span>
                 </a>
@@ -60,42 +64,174 @@
     <!--Fin del menu y menu movil-->
     <!-- Contenido principal -->
     <div class="container">
-        <div class="Text1">
+        <div class="Text1" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
             <h1>¿Has perdido algún objeto en la UPTx?</h1>
             <p>No te preocupes en UPTx Finder puedes buscar objetos perdidos fácilmente y reportar algún objeto perdido
             </p>
         </div>
-        <div class="Text2">
-            <img src="image.png" alt="Image of lost and found">
+        <div class="Text2" data-aos="fade-down-left">
+            <img src="imgs/image.png" alt="Image of lost and found">
         </div>
     </div>
     <!-- Fin del contenido principal -->
     <!-- Contenido de Objetos Encontrados -->
+    <div class="item" id="ultimos"></div>
     <div class="container2">
-        <h1>Ultimos objetos encontrados</h1>
-        <div class="container-cards">
+        <div>
+            <h1 data-aos="fade-right">Ultimos objetos encontrados </h1>
+        </div>
+        <div class="container-cards" data-aos="fade-up" data-aos-duration="3000">
             <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Objeto 1">
+                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.11.55_c8d198d9.jpg" alt="Objeto 1">
                 <h2>Objeto 1</h2>
                 <p>Descripción del objeto encontrado.</p>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Objeto 2">
+                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.12.16_c7280894.jpg" alt="Objeto 2">
                 <h2>Objeto 2</h2>
-                <p>Descripción del objeto encontrado.</p>
+                <p>Descripción de objeto encontrado.</p>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Objeto 3">
+                <img src="imgs/P0.jpg" alt="Objeto 3">
                 <h2>Objeto 3</h2>
                 <p>Descripción del objeto encontrado.</p>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Objeto 4">
+                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.38.22_74123fb9.jpg" alt="Objeto 4">
                 <h2>Objeto 4</h2>
                 <p>Descripción del objeto encontrado.</p>
             </div>
         </div>
     </div>
+    <!-- Fin del contenido de Objetos Encontrados -->
+    <!-- Contenido de Reportes -->
+    <div class="item" id="perdiste"></div>
+    <div class="container3">
+        <h1 data-aos="fade-right">¿Perdiste algún objeto tuyo?</h1>
+        <div class="cont-txt">
+            <div class="Text1-cont3" data-aos="fade-up-right">
+                <br><br><br><br><br>
+                <p>Puedes encontrarlo en UPTx Finder donde los objetos perdidos son agregados tanto por alumnos y
+                    docentes
+                    lo
+                    que hace más fácil el encuentro de los objetos .</p> <br>
+                <p>Nota: Si un objeto fue robado o extraviado por completo o fuera de la Universidad
+                    ya sería difícil de ser encontrados</p> <br>
+                <p>Si quieres reportar un objeto perdido, puedes hacerlo dando click en el botón de abajo.</p>
+                <button class="btn-cont3">
+                    <a href="#contacto" class="btn">Reportar Objeto Perdido</a>
+                </button>
+            </div>
+            <div class="Text2-cont3" data-aos="zoom-in">
+                <img src="imgs/Captura de pantalla 2025-08-06 094811.png" alt="Image objeto perdido">
+            </div>
+        </div>
+    </div>
+    <!-- Fin del contenido de Reportes -->
+    <!-- Contenido de lista de opjetos perdidos -->
+    <div class="item" id="lista"></div>
+    <div class="container4">
+        <h1 data-aos="fade-right">Lista de objetos perdidos</h1>
+        <samp data-aos="fade-right">Si tus objetos no los encuentras o aun no han sido subidos puedes repórtalos</samp>
+        <div class="container-cards" data-aos="fade-up" data-aos-duration="3000">
+            <div class="card">
+                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.11.55_c8d198d9.jpg" alt="Objeto perdido 1">
+                <h2>Objeto Perdido 1</h2>
+                <p>Descripción del objeto perdido.</p>
+            </div>
+            <div class="card">
+                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.12.16_c7280894.jpg" alt="Objeto perdido 2">
+                <h2>Objeto Perdido 2</h2>
+                <p>Descripción del objeto perdido.</p>
+            </div>
+            <div class="card">
+                <img src="imgs/P0.jpg" alt="Objeto perdido 3">
+                <h2>Objeto Perdido 3</h2>
+                <p>Descripción del objeto perdido.</p>
+            </div>
+            <div class="card">
+                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.38.22_74123fb9.jpg" alt="Objeto perdido 4">
+                <h2>Objeto Perdido 4</h2>
+                <p>Descripción del objeto perdido.</p>
+            </div>
+        </div>
+        <div class="container-cards" data-aos="fade-up" data-aos-duration="3000">
+            <div class="card">
+                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.11.55_c8d198d9.jpg" alt="Objeto perdido 5">
+                <h2>Objeto Perdido 5</h2>
+                <p>Descripción del objeto perdido.</p>
+            </div>
+            <div class="card">
+                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.12.16_c7280894.jpg" alt="Objeto perdido 6">
+                <h2>Objeto Perdido 6</h2>
+                <p>Descripción del objeto perdido.</p>
+            </div>
+            <div class="card">
+                <img src="imgs/P0.jpg" alt="Objeto perdido 7">
+                <h2>Objeto Perdido 7</h2>
+                <p>Descripción del objeto perdido.</p>
+            </div>
+            <div class="card">
+                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.38.22_74123fb9.jpg" alt="Objeto perdido 8">
+                <h2>Objeto Perdido 8</h2>
+                <p>Descripción del objeto perdido.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Fin del contenido de lista de objetos perdidos -->
+    <!-- Formulario para el reporte de objetos perdidos -->
+    <div class="item" id="contacto"></div>
+    <div class="container5">
+        <h1 data-aos="fade-right">Formulario de Reporte de Objetos Perdidos</h1>
+        <form class="formulario" data-aos="fade-up" data-aos-duration="3000">
+            <div class="from1">
+                <label for="nombre">Nombre del objeto:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="from2">
+                <label class="from5" for="descripcion">Descripción del Objeto Perdido:</label>
+                <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+            </div>
+            <div class="from3">
+                <label for="Categoria">Categoria: </label>
+                <select id="categoria" name="categoria" required>
+                    <option value="" disabled selected>Selecciona una categoría</option>
+                    <option value="Dispositivos Electrónicos">Dispositivos Electrónico</option>
+                    <option value="ropa">Ropa</option>
+                    <option value="Material">Libro</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="from4">
+                <label for="fecha">Ubicación:</label>
+                <input type="text" id="ubic" name="ubic" required>
+            </div>
+            <div class="from5">
+                <button type="submit">Enviar Reporte</button>
+            </div>
+            <div class="from6">
+                <label for="img">Imagen:</label>
+                <input type="file" id="img" name="img" accept="image/*" required>
+            </div>
+            <div class="from7">
+                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.38.22_74123fb9.jpg" alt="Imagen del objeto"
+                    id="previewImage">
+            </div>
+            <div class="from8">
+                <p>Al enviar el reporte, aceptas que la información proporcionada será utilizada para ayudar a encontrar
+                    tu objeto perdido.</p>
+            </div>
+        </form>
+    </div>
+    <!-- Fin del formulario para el reporte de objetos perdidos -->
+    <br><br><br><br><br><br>
+    <!-- Animatios OS -->|
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Scrips -->
+
 </body>
 
 </html>
