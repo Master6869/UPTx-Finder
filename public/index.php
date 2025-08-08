@@ -1,3 +1,7 @@
+<?php session_start();
+// Conexión a la base de datos
+include '../config/Conexion-BD-Workbench.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,26 +85,25 @@
             <h1 data-aos="fade-right">Ultimos objetos encontrados </h1>
         </div>
         <div class="container-cards" data-aos="fade-up" data-aos-duration="3000">
-            <div class="card">
-                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.11.55_c8d198d9.jpg" alt="Objeto 1">
-                <h2>Objeto 1</h2>
-                <p>Descripción del objeto encontrado.</p>
-            </div>
-            <div class="card">
-                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.12.16_c7280894.jpg" alt="Objeto 2">
-                <h2>Objeto 2</h2>
-                <p>Descripción de objeto encontrado.</p>
-            </div>
-            <div class="card">
-                <img src="imgs/P0.jpg" alt="Objeto 3">
-                <h2>Objeto 3</h2>
-                <p>Descripción del objeto encontrado.</p>
-            </div>
-            <div class="card">
-                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.38.22_74123fb9.jpg" alt="Objeto 4">
-                <h2>Objeto 4</h2>
-                <p>Descripción del objeto encontrado.</p>
-            </div>
+            <?php
+            // Consulta para obtener los últimos objetos encontrados
+            $sql = "SELECT * FROM objetos ORDER BY RAND() DESC LIMIT 4";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                // Mostrar los objetos encontrados
+                while ($row = $result->fetch_assoc()) {
+                    echo '
+                    <div class="card">
+                        <img src="' . $row['image_url'] . '" alt="Objeto encontrado">
+                        <h2> ' . $row['titulo'] . ' </h2>
+                        <p> ' . $row['descripcion'] . ' </p>
+                    </div>
+                    ';
+                }
+            } else {
+                echo '<p>No se encontraron objetos recientes.</p>';
+            }
+            ?>
         </div>
     </div>
     <!-- Fin del contenido de Objetos Encontrados -->
@@ -134,48 +137,25 @@
         <h1 data-aos="fade-right">Lista de objetos perdidos</h1>
         <samp data-aos="fade-right">Si tus objetos no los encuentras o aun no han sido subidos puedes repórtalos</samp>
         <div class="container-cards" data-aos="fade-up" data-aos-duration="3000">
-            <div class="card">
-                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.11.55_c8d198d9.jpg" alt="Objeto perdido 1">
-                <h2>Objeto Perdido 1</h2>
-                <p>Descripción del objeto perdido.</p>
-            </div>
-            <div class="card">
-                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.12.16_c7280894.jpg" alt="Objeto perdido 2">
-                <h2>Objeto Perdido 2</h2>
-                <p>Descripción del objeto perdido.</p>
-            </div>
-            <div class="card">
-                <img src="imgs/P0.jpg" alt="Objeto perdido 3">
-                <h2>Objeto Perdido 3</h2>
-                <p>Descripción del objeto perdido.</p>
-            </div>
-            <div class="card">
-                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.38.22_74123fb9.jpg" alt="Objeto perdido 4">
-                <h2>Objeto Perdido 4</h2>
-                <p>Descripción del objeto perdido.</p>
-            </div>
-        </div>
-        <div class="container-cards" data-aos="fade-up" data-aos-duration="3000">
-            <div class="card">
-                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.11.55_c8d198d9.jpg" alt="Objeto perdido 5">
-                <h2>Objeto Perdido 5</h2>
-                <p>Descripción del objeto perdido.</p>
-            </div>
-            <div class="card">
-                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.12.16_c7280894.jpg" alt="Objeto perdido 6">
-                <h2>Objeto Perdido 6</h2>
-                <p>Descripción del objeto perdido.</p>
-            </div>
-            <div class="card">
-                <img src="imgs/P0.jpg" alt="Objeto perdido 7">
-                <h2>Objeto Perdido 7</h2>
-                <p>Descripción del objeto perdido.</p>
-            </div>
-            <div class="card">
-                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.38.22_74123fb9.jpg" alt="Objeto perdido 8">
-                <h2>Objeto Perdido 8</h2>
-                <p>Descripción del objeto perdido.</p>
-            </div>
+            <?php
+            // Consulta para obtener todos los objetos perdidos
+            $sql = "SELECT * FROM objetos ORDER BY RAND() DESC LIMIT 8";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                // Mostrar los objetos perdidos
+                while ($row = $result->fetch_assoc()) {
+                    echo '
+                    <div class="card">
+                        <img src="' . $row['image_url'] . '" alt="Objeto perdido">
+                        <h2> ' . $row['titulo'] . ' </h2>
+                        <p> ' . $row['descripcion'] . ' </p>
+                    </div>
+                    ';
+                }
+            } else {
+                echo '<p>No se encontraron objetos perdidos.</p>';
+            }
+            ?>
         </div>
     </div>
     <!-- Fin del contenido de lista de objetos perdidos -->
@@ -183,9 +163,10 @@
     <div class="item" id="contacto"></div>
     <div class="container5">
         <h1 data-aos="fade-right">Formulario de Reporte de Objetos Perdidos</h1>
-        <form class="formulario" data-aos="fade-up" data-aos-duration="3000">
+        <form class="formulario" action="procesar_reporte.php" method="POST" enctype="multipart/form-data"
+            data-aos="fade-up" data-aos-duration="3000">
             <div class="from1">
-                <label for="nombre">Nombre del objeto:</label>
+                <label for="nombre">Nombre del objeto: </label>
                 <input type="text" id="nombre" name="nombre" required>
             </div>
             <div class="from2">
@@ -225,37 +206,13 @@
     </div>
     <!-- Fin del formulario para el reporte de objetos perdidos -->
     <br><br><br><br><br><br>
-    <!-- Footer -->
-    <!--<footer class="footer">
-        <div class="footer-content">
-            <h3>UPTx Finder</h3>
-            <p>UPTx Finder es una plataforma para ayudar a encontrar objetos perdidos en la Universidad Politécnica de
-                Tlaxcala.</p>
-            <ul class="socials">
-                <li><a href="https://www.facebook.com/UPTxFinder" target="_blank"><i class="fi fi-rr-facebook"></i></a>
-                </li>
-                <li><a href="https://www.instagram.com/uptxfinder/" target="_blank"><i
-                            class="fi fi-rr-instagram"></i></a>
-                </li>
-                <li><a href="https://twitter.com/UPTxFinder" target="_blank"><i class="fi fi-rr-twitter"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/uptxfinder" target="_blank"><i
-                            class="fi fi-rr-linkedin"></i></a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 UPTx Finder. Todos los derechos reservados.</p>
-            <p>Desarrollado por Papus Dev.</p>
-        </div>
-    </footer> -->
-    <!-- Fin del footer -->
     <!-- Animatios OS -->|
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
     <!-- Scrips -->
+    <script src="scripts/mostrar_img.js"><script>
+        </body>
 
-</body>
-
-</html>
+</html >
