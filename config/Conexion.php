@@ -5,7 +5,7 @@ $contrasena = "";         // Contraseña (vacía por defecto en XAMPP)
 $base_de_datos = "uptxfinder"; // Nombre de la base
 
 // Crear conexión
-$conexion = new mysqli($alertas, $objetos, $usuarios);
+$conexion = new mysqli($host, $usuario, $contrasena, $base_de_datos);
 
 // Verificar conexión
 if ($conexion->connect_error) {
