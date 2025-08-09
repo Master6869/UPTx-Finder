@@ -9,9 +9,14 @@ include '../config/Conexion-BD-Workbench.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-index.css">
+    <link rel="stylesheet" href="css/style-nav-Global.css">
+    <link rel="stylesheet" href="css/style-objets.css">
+    <link rel="stylesheet" href="public/css/style-alerts.css">
     <!--  Link Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -81,23 +86,30 @@ include '../config/Conexion-BD-Workbench.php';
     <!-- Contenido de Objetos Encontrados -->
     <div class="item" id="ultimos"></div>
     <div class="container2">
-        <div>
-            <h1 data-aos="fade-right">Ultimos objetos encontrados </h1>
-        </div>
+        <h1 data-aos="fade-right">Objetos Encontrados</h1>
         <div class="container-cards" data-aos="fade-up" data-aos-duration="3000">
             <?php
             // Consulta para obtener los últimos objetos encontrados
-            $sql = "SELECT * FROM objetos ORDER BY RAND() DESC LIMIT 4";
+            $sql = "SELECT * FROM objetos ORDER BY RAND() DESC LIMIT 3";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 // Mostrar los objetos encontrados
                 while ($row = $result->fetch_assoc()) {
                     echo '
-                    <div class="card">
-                        <img src="' . $row['image_url'] . '" alt="Objeto encontrado">
-                        <h2> ' . $row['titulo'] . ' </h2>
-                        <p> ' . $row['descripcion'] . ' </p>
+                <div class="container-objetos">
+                    <div class="image-container-objetos">
+                        <img src="' . $row['image_url'] . '" alt="Lentes perdidos">
                     </div>
+                    <div class="info-objetos">
+                        <h1>' . $row['titulo'] . '</h1>
+                        <p><strong>Descripción:</strong>' . $row['descripcion'] . '</p>
+                        <p><strong>Categoría:</strong> otro</p>
+                        <p><i class="fa fa-map-marker-alt"></i> <strong>Ubicación:</strong>' . $row['ubicacion'] . '</p>
+                        <span class="status-encontr">Encontrado</span>
+                        <p><strong>Reportado por:</strong>' . $row['reportado_por'] . '</p>
+                        <p><strong>Fecha:</strong>' . $row['reported_at'] . '</p>
+                    </div>
+                </div>
                     ';
                 }
             } else {
@@ -105,24 +117,24 @@ include '../config/Conexion-BD-Workbench.php';
             }
             ?>
         </div>
-    </div>
+    </div class>
     <!-- Fin del contenido de Objetos Encontrados -->
     <!-- Contenido de Reportes -->
     <div class="item" id="perdiste"></div>
     <div class="container3">
-        <h1 data-aos="fade-right">¿Perdiste algún objeto tuyo?</h1>
+        <h1 data-aos="fade-right">¿Encontraste algún objeto?</h1>
         <div class="cont-txt">
             <div class="Text1-cont3" data-aos="fade-up-right">
                 <br><br><br><br><br>
-                <p>Puedes encontrarlo en UPTx Finder donde los objetos perdidos son agregados tanto por alumnos y
+                <p>Puedes subirlo en UPTx Finder donde los objetos perdidos son agregados tanto por alumnos y
                     docentes
                     lo
                     que hace más fácil el encuentro de los objetos .</p> <br>
                 <p>Nota: Si un objeto fue robado o extraviado por completo o fuera de la Universidad
                     ya sería difícil de ser encontrados</p> <br>
                 <p>Si quieres reportar un objeto perdido, puedes hacerlo dando click en el botón de abajo.</p>
-                <button class="btn-cont3">
-                    <a href="#contacto" class="btn">Reportar Objeto Perdido</a>
+                <button class="btn">
+                    <a href="#cntacto" class="btn" id="success">Reportar Objeto Perdido</a>
                 </button>
             </div>
             <div class="Text2-cont3" data-aos="zoom-in">
@@ -135,7 +147,8 @@ include '../config/Conexion-BD-Workbench.php';
     <div class="item" id="lista"></div>
     <div class="container4">
         <h1 data-aos="fade-right">Lista de objetos perdidos</h1>
-        <samp data-aos="fade-right">Si tus objetos no los encuentras o aun no han sido subidos puedes repórtalos</samp>
+        <samp data-aos="fade-right">Si tus objetos no los encuentras o aun no han sido subidos puedes
+            repórtalos</samp>
         <div class="container-cards" data-aos="fade-up" data-aos-duration="3000">
             <?php
             // Consulta para obtener todos los objetos perdidos
@@ -145,11 +158,20 @@ include '../config/Conexion-BD-Workbench.php';
                 // Mostrar los objetos perdidos
                 while ($row = $result->fetch_assoc()) {
                     echo '
-                    <div class="card">
-                        <img src="' . $row['image_url'] . '" alt="Objeto perdido">
-                        <h2> ' . $row['titulo'] . ' </h2>
-                        <p> ' . $row['descripcion'] . ' </p>
+                    <div class="container-objetos">
+                    <div class="image-container-objetos">
+                        <img src="' . $row['image_url'] . '" alt="Lentes perdidos">
                     </div>
+                    <div class="info-objetos">
+                        <h1>' . $row['titulo'] . '</h1>
+                        <p><strong>Descripción:</strong>' . $row['descripcion'] . '</p>
+                        <p><strong>Categoría:</strong> otro</p>
+                        <p><i class="fa fa-map-marker-alt"></i> <strong>Ubicación:</strong>' . $row['ubicacion'] . '</p>
+                        <span class="status">' . $row['estado'] . '</span>
+                        <p><strong>Reportado por:</strong>' . $row['reportado_por'] . '</p>
+                        <p><strong>Fecha:</strong>' . $row['reported_at'] . '</p>
+                    </div>
+                </div>
                     ';
                 }
             } else {
@@ -188,18 +210,19 @@ include '../config/Conexion-BD-Workbench.php';
                 <input type="text" id="ubic" name="ubic" required placeholder="Ejemplo: Cafetería, Biblioteca, etc.">
             </div>
             <div class="from5">
-                <button type="submit">Enviar Reporte</button>
+                <ul class="notifications"></ul>
+                <button type="submit" class="btn">Enviar Reporte</button>
             </div>
             <div class="from6">
                 <label for="img">Imagen:</label>
                 <input type="file" id="img" name="img" accept="image/*" required>
             </div>
             <div class="from7">
-                <img src="imgs/Imagen de WhatsApp 2025-08-05 a las 09.38.22_74123fb9.jpg" alt="Imagen del objeto"
-                    id="previewImage">
+                <img id="previewImage" src="#" alt="Vista previa">
             </div>
             <div class="from8">
-                <p>Al enviar el reporte, aceptas que la información proporcionada será utilizada para ayudar a encontrar
+                <p>Al enviar el reporte, aceptas que la información proporcionada será utilizada para ayudar a
+                    encontrar
                     tu objeto perdido.</p>
             </div>
         </form>
@@ -212,7 +235,9 @@ include '../config/Conexion-BD-Workbench.php';
         AOS.init();
     </script>
     <!-- Scrips -->
-    <script src="scripts/mostrar_img.js"><script>
-        </body>
+    <script src="public/scripts/mostrar_img.js"></script>
+    <script src="public/scripts/script.js"></script>
+    <script src="public/scripts/scrip-Alerts.js"></script>
+</body>
 
-</html >
+</html>
