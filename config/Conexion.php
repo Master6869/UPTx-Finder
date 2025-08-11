@@ -1,15 +1,15 @@
 <?php
-$host = "localhost";      // Servidor
-$usuario = "root";        // Usuario por defecto en XAMPP
-$contrasena = "";         // Contraseña (vacía por defecto en XAMPP)
-$base_de_datos = "uptxfinder"; // Nombre de la base
+$servername = "localhost";      // Servidor
+$username = "root";        // Usuario por defecto en XAMPP
+$password = "";         // Contraseña (vacía por defecto en XAMPP)
+$dbname = "uptxfinder"; // Nombre de la base
 
 // Crear conexión
-$conexion = new mysqli($host, $usuario, $contrasena, $base_de_datos);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar conexión
-if ($conexion->connect_error) {
-    die("Conexión fallida: " . $conexion->connect_error);
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
 
 echo "Conexión exitosa";

@@ -1,6 +1,6 @@
-<?php
+<?php 
 //conexion a la base de datos
-include '../config/Conexion-BD-Workbench.php';
+include '../config/Conexion.php';
 // Recoger datos del formulario
 $titulo = $_POST['nombre'];
 $descripcion = $_POST['descripcion'];
