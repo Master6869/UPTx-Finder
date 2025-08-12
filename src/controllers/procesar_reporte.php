@@ -1,5 +1,18 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
+=======
+<?php 
+//conexion a la base de datos
+include '../config/Conexion.php';
+// Recoger datos del formulario
+$titulo = $_POST['nombre'];
+$descripcion = $_POST['descripcion'];
+$categoria = $_POST['categoria'];
+$ubicacion = $_POST['ubic'];
+$estado = 'Perdido'; // Asumimos que el formulario es para objetos perdidos
+$reportado_por = 1; // Puedes cambiar esto según el usuario logueado
+>>>>>>> b19d586ac8de05804b3dca96bddffd600adbaaaa
 
 <head>
     <meta charset="UTF-8">

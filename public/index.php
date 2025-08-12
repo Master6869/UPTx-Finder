@@ -1,6 +1,6 @@
 <?php session_start();
 // Conexión a la base de datos
-include '../config/Conexion-BD-Workbench.php';
+include '../config/Conexion.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
