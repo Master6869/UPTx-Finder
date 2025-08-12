@@ -120,6 +120,20 @@ body {
     gap: 8px;
 }
 
+.Text1-cont3 h4 {
+    margin: 0 0 10px;
+    color: #e65100;
+    font-family: poppins, sans-serif;
+    font-size: 34px;
+}
+
+.Text1-cont3 p {
+    font-size: 24px;
+    color: #333;
+    font-family: poppins, sans-serif;
+    margin-bottom: 20px;
+}
+
 .Text2-cont3 {
     display: flex;
     flex-direction: column;
@@ -154,7 +168,18 @@ body {
     transition: background-color 0.3s ease;
 }
 
+.fas.fa-search {
+    margin-right: 10px;
+    font-size: 20px;
+    /* Que el icono se se voltee*/
+    transform: rotate(90deg);
+}
+
 /* contenido de objetos perdidos */
+.container4 {
+    margin-top: 100px;
+}
+
 .container4 h1 {
     font-size: 50px;
     color: #333;

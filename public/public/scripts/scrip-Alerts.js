@@ -1,59 +1,47 @@
 const notifications = document.querySelector(".notifications"),
     buttons = document.querySelectorAll(".buttons .btn");
-
 // Object containing details for different types of toasts
 const toastDetails = {
     timer: 5000,
     success: {
-        icon: 'fa sólido fa-circle-check',
-        text: 'Se agregó al carrito de compras correctamente.',
+        icon: 'fa-circle-check',
+        text: 'Reporte enviado correctamente.',
     },
     error: {
-        icon: 'fa sólido fa-circle-xmark',
-        text: 'Por favor, selecciona una talla antes de agregar al carrito.',
+        icon: 'fa-circle-xmark',
+        text: 'Error: This is an error toast.',
     },
     warning: {
-        icon: 'fi fi-rr-star',
-        text: 'Se agregó a tus favoritos.',
+        icon: 'fa-triangle-exclamation',
+        text: 'Warning: This is a warning toast.',
     },
     info: {
-        icon: 'fa sólido fa-circle-info',
+        icon: 'fa-circle-info',
         text: 'Info: This is an information toast.',
-    },
-    successfavorite: {
-        icon: 'fa-circle-check',
-        text: 'Producto se eliminó de favoritos exitosamente.',
-    },
-    errorfavorite: {
-        icon: 'fa sólido fa-circle-xmark',
-        text: 'Este producto ya está en favoritos.',
-    },
+    }
 }
+//mostrar el elemento de success
 const removeToast = (toast) => {
     toast.classList.add("hide");
     if (toast.timeoutId) clearTimeout(toast.timeoutId); // Clearing the timeout for the toast
     setTimeout(() => toast.remove(), 500); // Removing the toast after 500ms
+    console.log("Toast removed:", toast); // Logging the removal of the toast
 }
-
 const createToast = (id) => {
-    if (!toastDetails[id]) {
-        console.error(`El ID '${id}' no está definido en toastDetails.`);
-        return;
-    }
-
+    // Getting the icon and text for the toast based on the id passed
     const { icon, text } = toastDetails[id];
-    const toast = document.createElement("li");
-    toast.className = `toast ${id}`;
-    toast.innerHTML = `
-    <div class="column">
-        <i class="${icon}"></i>
-        <span>${text}</span>
-    </div>
-        <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>`;
-    notifications.appendChild(toast);
+    const toast = document.createElement("li"); // Creating a new 'li' element for the toast
+    toast.className = `toast ${id}`; // Setting the classes for the toast
+    // Setting the inner HTML for the toast
+    toast.innerHTML = `<div class="column">
+                        <i class="fa-solid ${icon}"></i>
+                        <span>${text}</span>
+                        </div>
+                        <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>`;
+    notifications.appendChild(toast); // Append the toast to the notification ul
+    // Setting a timeout to remove the toast after the specified duration
     toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
-};
-
+}
 // Adding a click event listener to each button to create a toast when clicked
 buttons.forEach(btn => {
     btn.addEventListener("click", () => createToast(btn.id));

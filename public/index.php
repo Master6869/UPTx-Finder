@@ -12,9 +12,9 @@ include '../config/Conexion-BD-Workbench.php';
     <link rel="stylesheet" href="css/style-index.css">
     <link rel="stylesheet" href="css/style-nav-Global.css">
     <link rel="stylesheet" href="css/style-objets.css">
-    <link rel="stylesheet" href="public/css/style-alerts.css">
     <!--  Link Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -71,6 +71,7 @@ include '../config/Conexion-BD-Workbench.php';
         <script src="scripts/Buscador.js" defer></script>
     </nav>
     <!--Fin del menu y menu movil-->
+    <ul class="notifications"></ul>
     <!-- Contenido principal -->
     <div class="container">
         <div class="Text1" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
@@ -89,8 +90,8 @@ include '../config/Conexion-BD-Workbench.php';
         <h1 data-aos="fade-right">Objetos Encontrados</h1>
         <div class="container-cards" data-aos="fade-up" data-aos-duration="3000">
             <?php
-            // Consulta para obtener los últimos objetos encontrados
-            $sql = "SELECT * FROM objetos ORDER BY RAND() DESC LIMIT 3";
+            // Consulta para obtener los últimos objetos encontrados ordenados por categoria
+            $sql = "SELECT * FROM objetos WHERE estado = 'Encontrado' ORDER BY RAND() DESC LIMIT 3";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 // Mostrar los objetos encontrados
@@ -126,16 +127,20 @@ include '../config/Conexion-BD-Workbench.php';
         <div class="cont-txt">
             <div class="Text1-cont3" data-aos="fade-up-right">
                 <br><br><br><br><br>
-                <p>Puedes subirlo en UPTx Finder donde los objetos perdidos son agregados tanto por alumnos y
-                    docentes
-                    lo
-                    que hace más fácil el encuentro de los objetos .</p> <br>
-                <p>Nota: Si un objeto fue robado o extraviado por completo o fuera de la Universidad
-                    ya sería difícil de ser encontrados</p> <br>
+                <p>Ayuda a otros estudiantes y docentes a recuperar sus pertenencias. Si encontraste algo, repórtalo
+                    aquí para que pueda ser identificado y devuelto.</p> <br>
+
+                <h4>📌 Nota importante:</h4>
+                <p> <strong>UPTx Finder</strong> no garantiza la devolución de los objetos, solo
+                    facilita el
+                    contacto entre quien
+                    lo encontró y el propietario.
+                </p> <br>
                 <p>Si quieres reportar un objeto perdido, puedes hacerlo dando click en el botón de abajo.</p>
-                <button class="btn">
-                    <a href="#cntacto" class="btn" id="success">Reportar Objeto Perdido</a>
+                <button class="btn-cont3">
+                    <i class="fas fa-search"></i><a href="#contacto">Reportar Objeto Perdido</a>
                 </button>
+
             </div>
             <div class="Text2-cont3" data-aos="zoom-in">
                 <img src="imgs/Captura de pantalla 2025-08-06 094811.png" alt="Image objeto perdido">
@@ -152,7 +157,7 @@ include '../config/Conexion-BD-Workbench.php';
         <div class="container-cards" data-aos="fade-up" data-aos-duration="3000">
             <?php
             // Consulta para obtener todos los objetos perdidos
-            $sql = "SELECT * FROM objetos ORDER BY RAND() DESC LIMIT 8";
+            $sql = "SELECT * FROM objetos WHERE estado = 'Perdido' ORDER BY RAND() DESC LIMIT 8";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 // Mostrar los objetos perdidos
@@ -170,6 +175,11 @@ include '../config/Conexion-BD-Workbench.php';
                         <span class="status">' . $row['estado'] . '</span>
                         <p><strong>Reportado por:</strong>' . $row['reportado_por'] . '</p>
                         <p><strong>Fecha:</strong>' . $row['reported_at'] . '</p>
+                        <div class="buttons">
+                        <button class="btn">
+                            <i class="fas fa-envelope"></i><a href="Solicitud.php?id=' . $row['id_objetos'] . '">¿Este objeto es tuyo?</a>
+                        </button>
+                    </div>
                     </div>
                 </div>
                     ';
@@ -210,8 +220,9 @@ include '../config/Conexion-BD-Workbench.php';
                 <input type="text" id="ubic" name="ubic" required placeholder="Ejemplo: Cafetería, Biblioteca, etc.">
             </div>
             <div class="from5">
-                <ul class="notifications"></ul>
-                <button type="submit" class="btn">Enviar Reporte</button>
+                <div class="buttons">
+                    <button type="submit" class="btn">Enviar Reporte</button>
+                </div>
             </div>
             <div class="from6">
                 <label for="img">Imagen:</label>

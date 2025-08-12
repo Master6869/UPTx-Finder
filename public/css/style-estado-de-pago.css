@@ -1,0 +1,160 @@
+/*Parte de pedido exitoso*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 12vw;
+    background-color: #fff;
+    margin: 0;
+}
+
+.checkmark-circle {
+    width: 25vw;
+    height: 25vw;
+    max-width: 150px;
+    max-height: 150px;
+    min-width: 80px;
+    min-height: 80px;
+    background-color: #28a745;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 5vw;
+}
+
+.checkmark {
+    width: 55%;
+    height: 25%;
+    border-left: 20px solid white;
+    border-bottom: 20px solid white;
+    transform: rotate(-45deg);
+}
+
+.mensaje {
+    font-size: 5vw;
+    font-weight: bold;
+    color: #000;
+}
+
+.id-pago {
+    font-size: 4vw;
+    font-weight: bold;
+    margin-top: 2vw;
+    color: #000;
+}
+.btn {
+    background-color: #202020;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+@media (min-width: 600px) {
+    .checkmark-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .checkmark {
+        width: 55%;
+        height: 25%;
+    }
+
+    .mensaje {
+        font-size: 32px;
+    }
+
+    .id-pago {
+        font-size: 24px;
+    }
+}
+
+
+/* Ajustes para pantallas más grandes */
+@media (min-width: 600px) {
+    .mensaje {
+        font-size: 32px;
+    }
+
+    .id-pago {
+        font-size: 24px;
+    }
+}
+
+/* Parte de error con el pedido */
+* {
+    box-sizing: border-box;
+}
+
+.error-circle {
+    width: 25vw;
+    height: 25vw;
+    max-width: 150px;
+    max-height: 150px;
+    min-width: 80px;
+    min-height: 80px;
+    background-color: #ff3b3b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 5vw;
+}
+
+.error-x {
+    position: relative;
+    width: 40%;
+    height: 80%;
+}
+
+.error-x::before,
+.error-x::after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 35%;
+    width: 20px;
+    height: 100%;
+    background-color: white;
+    transform-origin: center;
+    transform: translate(-50%, -50%);
+}
+
+.error-x::before {
+    transform: rotate(45deg);
+}
+
+.error-x::after {
+    transform: rotate(-45deg);
+}
+
+.mensaje {
+    font-size: 5vw;
+    font-weight: bold;
+    color: #000;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.detalle-error {
+    font-size: 4vw;
+    font-weight: bold;
+    color: #000;
+    margin-top: 2vw;
+}
+
+@media (min-width: 600px) {
+    .mensaje {
+        font-size: 32px;
+    }
+
+    .detalle-error {
+        font-size: 24px;
+    }
+}
