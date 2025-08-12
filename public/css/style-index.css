@@ -357,107 +357,133 @@ footer a:hover {
     text-decoration: underline;
 } /*
 
-/* Responsive: tablets */
-@media screen and (max-width: 992px) {
-    .container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .container h1,
-    .container p,
-    .container2 h1,
-    .container3 h1 {
-        padding-left: 0;
-    }
-
-    .container-cards {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-
-    .container3 {
-        padding-left: 50px;
-    }
-
-    .container3 h1 {
-        padding-left: 0;
-        text-align: center;
-    }
-
-    .cont-txt {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+/* Celulares: 6" a 6.8" (~320px a 480px) */
+@media (max-width: 480px) {
+.container {
+    grid-template-columns: 1fr;
+    margin-top: 80px;
+    padding: 10px;
 }
 
-
-/* Responsive: phones */
-@media screen and (max-width: 576px) {
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        margin-top: 100px;
-        padding: 10px;
-    }
-
-    .container h1 {
-        font-size: 42px;
-        padding: 10px 0;
-        text-align: center;
-    }
-
-    .container p {
-        font-size: 20px;
-        padding: 10px 0;
-        text-align: center;
-    }
-
-    .container2 {
-        margin-top: 100px;
-    }
-
-    .container2 h1 {
-        font-size: 30px;
-        text-align: center;
-        padding: 0;
-    }
-
-    .container-cards {
-        grid-template-columns: 1fr;
-        padding: 0;
-        /* Cambia de 10px a 0 para aprovechar todo el ancho */
-    }
-
-    .card {
-        width: 100%;
-        max-width: 98vw;
-        /* Haz que la tarjeta use casi todo el ancho de la pantalla */
-        min-width: 0;
-    }
-
-    .container3 {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .container3 h1 {
-        font-size: 30px;
-        padding: 0;
-        text-align: center;
-    }
-
-    .container3 p {
-        font-size: 18px;
-        text-align: center;
-    }
-
-    .cont-txt {
-        grid-template-columns: 1fr;
-        padding: 0 10px;
-    }
-
-    .Text2-cont3 {
-        padding: 10px;
-    }
+.container h1,
+.container p,
+.container2 h1,
+.container3 h1,
+.container3 p,
+.container4 h1,
+.container4 samp {
+    font-size: 24px;
+    padding-left: 20px;
+    text-align: center;
 }
+
+.container-cards {
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.card {
+    width: 90%;
+    height: auto;
+}
+
+.formulario {
+    grid-template-columns: 1fr;
+    width: 90%;
+}
+
+.from7 {
+    grid-row: auto;
+    grid-column: auto;
+}
+
+.container5 h1 {
+    font-size: 24px;
+}
+
+.btn-cont3 {
+    flex-direction: column;
+    padding: 10px;
+}
+}
+
+/* Tablets: 8" a 11" (~481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+.container {
+    grid-template-columns: 1fr;
+    margin-top: 100px;
+}
+
+.container h1,
+.container p,
+.container2 h1,
+.container3 h1,
+.container3 p,
+.container4 h1,
+.container4 samp {
+    font-size: 32px;
+    padding-left: 30px;
+    text-align: center;
+}
+
+.container-cards {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card {
+    width: 90%;
+    height: auto;
+}
+
+.formulario {
+    grid-template-columns: 1fr;
+    width: 90%;
+}
+
+.container5 h1 {
+    font-size: 28px;
+}
+}
+
+/* Laptops: 13" a 15" (~769px a 1440px) */
+@media (min-width: 769px) and (max-width: 1440px) {
+.container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 120px;
+}
+
+.container-cards {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.formulario {
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+}
+
+.container5 h1 {
+    font-size: 32px;
+}
+}
+
+/* Computadoras de escritorio: 21" a 27" (~1441px en adelante) */
+@media (min-width: 1441px) {
+.container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 150px;
+}
+
+.container-cards {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.formulario {
+    grid-template-columns: repeat(2, 400px);
+    width: max-content;
+}
+
+.container5 h1 {
+    font-size: 36px;
+}
+}
+/*xdddddd*/
